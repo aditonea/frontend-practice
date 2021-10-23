@@ -1,0 +1,153 @@
+//Primary
+
+$Background: hsl(233, 47%, 7%);
+$Card: hsl(244, 38%, 16%);
+$Accent: hsl(277, 64%, 61%);
+
+$Paragraph: hsla(0, 0%, 100%, 0.65);
+$Stat: hsla(0, 0%, 100%, 0.6);
+
+//Fonts
+
+$inter: "Inter";
+$lexend: "Lexend Deca";
+
+
+@mixin tablet {
+    @media only screen and (min-width:500px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media only screen and (min-width: 1000px) {
+      @content;  
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $Background;
+}
+
+.container {
+    margin: 50px auto;
+    background: $Card;
+    width: 90vw;
+    height: 90vh;
+    border-radius: 10px;
+    @include laptop {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 75vh;
+        align-items: center;
+        max-width: 990px;
+        max-height: 400px;
+    }
+}
+
+.image {
+    width: 100%;
+    height: 40%;
+    background-image: url("../images/image-header-mobile.jpg");
+    background-size: cover;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    @include laptop {
+        width: 45%;
+        height: 100%;
+        border-radius: 0 10px 10px 0;
+        background-image: url("../images/image-header-desktop.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba($Accent, .3);
+        position: absolute;
+        border-radius: 10px 10px 0 0;
+        @include laptop {
+            border-radius: 0 10px 10px 0;
+        }
+    }
+}
+
+.content {
+    width: 70%;
+    height: 60%;
+    margin: 0 auto;
+    font-family: $inter;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    @include laptop {
+        height: 100%;
+        width: 40%;
+        align-items: flex-start;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+    h1 {
+        text-align: center;
+        color: white;
+        font-size: 1.5em;
+        span {
+            color: $Accent;
+        }
+        @include laptop {
+            text-align: left;
+            max-width: 300px;
+        }
+    }
+    p {
+        text-align: center;
+        color: $Paragraph;
+        font-size: .8em;
+        line-height: 1.7;
+        font-weight: 400;
+        max-width: 400px;
+        @include laptop {
+            text-align: left;
+            max-width: 300px;
+        }
+    }
+    .stats {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        height: 40%;
+        width: 70%;
+        p {
+        color: white;
+        font-family: $inter;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1em;
+        line-height: 1.2;
+        span {
+            font-weight: 400;
+            color: $Stat;
+            font-size: .5em;
+        }
+        }
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-around;
+    }
+        @include laptop {
+            justify-content: space-between;
+            width: 90%;
+            height: 20%;
+            max-width: 300px;
+        }
+}
+}

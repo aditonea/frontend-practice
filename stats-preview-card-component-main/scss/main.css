@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #090b1a;
+}
+
+.container {
+  margin: 50px auto;
+  background: #1b1938;
+  width: 90vw;
+  height: 90vh;
+  border-radius: 10px;
+}
+@media only screen and (min-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 75vh;
+    align-items: center;
+    max-width: 990px;
+    max-height: 400px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 40%;
+  background-image: url("../images/image-header-mobile.jpg");
+  background-size: cover;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+}
+@media only screen and (min-width: 1000px) {
+  .image {
+    width: 45%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    background-image: url("../images/image-header-desktop.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+.image::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(170, 92, 219, 0.3);
+  position: absolute;
+  border-radius: 10px 10px 0 0;
+}
+@media only screen and (min-width: 1000px) {
+  .image::after {
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+.content {
+  width: 70%;
+  height: 60%;
+  margin: 0 auto;
+  font-family: "Inter";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+@media only screen and (min-width: 1000px) {
+  .content {
+    height: 100%;
+    width: 40%;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-top: 20px;
+  }
+}
+.content h1 {
+  text-align: center;
+  color: white;
+  font-size: 1.5em;
+}
+.content h1 span {
+  color: #aa5cdb;
+}
+@media only screen and (min-width: 1000px) {
+  .content h1 {
+    text-align: left;
+    max-width: 300px;
+  }
+}
+.content p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.8em;
+  line-height: 1.7;
+  font-weight: 400;
+  max-width: 400px;
+}
+@media only screen and (min-width: 1000px) {
+  .content p {
+    text-align: left;
+    max-width: 300px;
+  }
+}
+.content .stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  height: 40%;
+  width: 70%;
+}
+.content .stats p {
+  color: white;
+  font-family: "Inter";
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1.2;
+}
+.content .stats p span {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.5em;
+}
+@media only screen and (min-width: 500px) {
+  .content .stats {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .content .stats {
+    justify-content: space-between;
+    width: 90%;
+    height: 20%;
+    max-width: 300px;
+  }
+}/*# sourceMappingURL=main.css.map */
